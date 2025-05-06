@@ -1,6 +1,6 @@
 # ville.Carbon
 
-Demo application to show how Qooxdoo and [IBM's Carbon Styles](https://github.com/carbon-design-system/carbon/tree/main/packages/styles) can work together. Also illustrates how to integrate any standard Sass project into a Qooxdoo project.
+Demo application to show how Qooxdoo and [IBM's Carbon Styles](https://github.com/carbon-design-system/carbon/tree/main/packages/styles) can work together. Also illustrates how to integrate any standard [Sass](https://sass-lang.com/) project into a Qooxdoo project.
 
 ## About the Project
 
