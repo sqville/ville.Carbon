@@ -20,7 +20,7 @@ qx.Mixin.define("ville.cssuc.patch.MWidget", {
 
     clearAllInlineStyles: {
       check: "Boolean",
-      init: false,
+      init: true,
       apply: "_applyClearAllInlineStyles",
       themeable: true
     },

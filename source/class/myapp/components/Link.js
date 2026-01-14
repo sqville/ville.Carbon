@@ -5,9 +5,6 @@ qx.Class.define("myapp.components.Link", {
 
         super();
 
-        this.setExcludeBoundsFromDom(true);
-        this.setClearAllInlineStyles(true);
-
         if (label != null) {
             this.setLabel(label);
         }

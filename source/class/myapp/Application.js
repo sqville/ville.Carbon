@@ -49,24 +49,27 @@ qx.Class.define("myapp.Application",
       }
 
       if (qx.core.Environment.get("ville.cssuc")) {
-        //qx.Class.include(qx.ui.core.Widget, ville.cssuc.MCssUtilityClass);
         qx.Class.patch(qx.ui.core.LayoutItem, ville.cssuc.patch.MLayoutItem);
         qx.Class.patch(qx.ui.core.Widget, ville.cssuc.patch.MWidget);
         qx.Class.patch(qx.html.Label, ville.cssuc.patch.MLabel);
         qx.Class.patch(qx.ui.form.AbstractField, ville.cssuc.patch.MAbstractField);
+
+        // Adds a property initialize method to all widgets, to clear sytles by default 
+        qx.Class.include(qx.ui.core.Widget, ville.cssuc.MClearAllStyles);
+
+        // clear out all styling of html and body tags
+        document.documentElement.style = "";
+        document.body.style = "";
       }  
 
       // Document is the application root
       const doc = this.getRoot();
-      doc.setExcludeBoundsFromDom(true);
       doc.setClearAllInlineStyles(true);
       doc.getContentElement().enableScrolling();
 
       // Header
       var headeranchor = new qx.ui.container.Composite(new qx.ui.layout.Basic());
       headeranchor.setCssUtilityClass("cds--g100 cds--layer-one");
-      headeranchor.setExcludeBoundsFromDom(true);
-      headeranchor.setClearAllInlineStyles(true);
       var header = new myapp.Header();
       headeranchor.add(header);
 
